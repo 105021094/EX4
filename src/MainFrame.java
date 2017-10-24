@@ -33,7 +33,7 @@ public class MainFrame extends JFrame {
         jmFile.add(jmiExit);
         jmFile.add(jmiLoto);
 
-        jmFile.setBounds(0,0,200,80);
+        jInternalFrame.setBounds(0,0,300,80);
 
         jmiLoto.addActionListener(new ActionListener() {
             @Override
