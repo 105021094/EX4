@@ -10,6 +10,7 @@ public class LoginFrame extends JFrame{
     private JPasswordField jtfPW = new JPasswordField();
     private JButton jbtExit = new JButton("Exit");
     private JButton jbtLogin = new JButton("Login");
+
     private Container cp;
     private Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
     private int frmW = 300, frmH = 150, screenW, screenH;
@@ -28,8 +29,10 @@ public class LoginFrame extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (jtfID.getText().equals("h304") && (new String(jtfPW.getPassword())).equals("23323456")) {
-                    MainFrame mainFrame = new MainFrame();
-                    mainFrame.setVisible(true);
+                    //MainFrame mainFrame = new MainFrame();
+                    MainFrame mFrm = new MainFrame(LoginFrame.this);
+                    mFrm.setVisible(true);
+
                     LoginFrame.this.setVisible(false);
                 }else {
                     JOptionPane.showMessageDialog(LoginFrame.this,"Error");
@@ -49,6 +52,10 @@ public class LoginFrame extends JFrame{
         cp.add(jtfPW);
         cp.add(jbtExit);
         cp.add(jbtLogin);
+    }
+    public void reset(){
+        jtfID.setText("");
+        jtfPW.setText("");
     }
 
 }
